@@ -1,0 +1,19 @@
+﻿<Window x:Class="HSMS.UI.CaptureWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:wpfmedia="clr-namespace:WPFMediaKit.DirectShow.Controls;assembly=WPFMediaKit"
+        Title="CaptureWindow" Height="348" Width="372" Loaded="Window_Loaded">
+    <Grid>
+        <DockPanel>
+            <ComboBox Height="30" DockPanel.Dock="Top" Name="cbCameras" SelectionChanged="cbCameras_SelectionChanged">
+                
+            </ComboBox>
+            <wpfmedia:VideoCaptureElement Height="242" DockPanel.Dock="Top" Name="captureElement"></wpfmedia:VideoCaptureElement>
+             <StackPanel Orientation="Horizontal" Height="35">
+                <Button Height="30" Name="btnCapture" DockPanel.Dock="Top"  Content="拍照" Click="btnCapture_Click"></Button>
+                <Button Height="30" Content="重拍" Name="btnCaptureAgain" Click="btnCaptureAgain_Click"></Button>
+                    <Button Height="30" Name="btnOK" DockPanel.Dock="Top"  Content="确定" Click="btnOK_Click"></Button>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>
