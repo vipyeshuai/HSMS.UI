@@ -1,0 +1,25 @@
+﻿<Window x:Class="HSMS.UI.SalarySheetWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SalarySheetWindow" Height="600" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="24,12,0,0" Name="cmbYear" VerticalAlignment="Top" Width="120" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="169,12,0,0" Name="textBlock1" Text="年" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,12,400,0" Name="cmbMonth" VerticalAlignment="Top" Width="120" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="415,16,0,0" Name="textBlock2" Text="月" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="497,12,0,0" Name="cmbDept" VerticalAlignment="Top" Width="120" SelectedValuePath="Id" DisplayMemberPath="Name" />
+        <Button Content="生成工资报表" Height="23" HorizontalAlignment="Left" Margin="655,12,0,0" Name="btnCreateSalarySheet" VerticalAlignment="Top" Width="99" Click="btnCreateSalarySheet_Click" />
+        <DataGrid AutoGenerateColumns="False" Height="486" HorizontalAlignment="Left" Margin="12,63,0,0" Name="dataGridSalaryItems" VerticalAlignment="Top" Width="766" RowEditEnding="dataGridSalaryItems_RowEditEnding">
+            <DataGrid.Columns>
+                <DataGridComboBoxColumn Header="职工" x:Name="colEmployee" SelectedValueBinding="{Binding EmployeeId}" SelectedValuePath="Id"
+                                        DisplayMemberPath="Name">
+                </DataGridComboBoxColumn>
+                <DataGridTextColumn Width="100" Header="基本工资"  Binding="{Binding BaseSalary,UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                <DataGridTextColumn Width="100" Header="津贴" Binding="{Binding Bonus,UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                <DataGridTextColumn Width="100" Header="罚款" Binding="{Binding Fine,UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                <DataGridTextColumn Width="100" Header="其他" Binding="{Binding Other,UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+            </DataGrid.Columns>
+            </DataGrid>
+
+    </Grid>
+</Window>
