@@ -1,0 +1,18 @@
+﻿<Window x:Class="HSMS.UI.SystemMgr.OperatorEditUI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="操作员编辑界面" Height="300" Width="360" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="/HSMS.UI;component/backgroundImage/manage1.jpg" />
+    </Window.Background>
+    <Grid>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="128,37,0,0" Name="txtUserName" VerticalAlignment="Top" Width="120" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="39,37,0,0" Text="用户名" VerticalAlignment="Top" Name="tx" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="39,84,0,0" Name="textBlock2" Text="真实姓名" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="128,84,0,0" Name="txtRealName" VerticalAlignment="Top" Width="120" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="128,134,0,0" Name="pdxPassword" VerticalAlignment="Top" Width="120" />
+        <TextBlock Height="21" HorizontalAlignment="Left" Margin="39,134,0,0" Name="textBlock3" Text="密码" VerticalAlignment="Top" />
+        <Button Content="保存" Height="23" HorizontalAlignment="Left" Margin="50,201,0,0" Name="btnSave" VerticalAlignment="Top" Width="75" Click="btnSave_Click" />
+        <Button Content="取消" Height="23" HorizontalAlignment="Left" Margin="186,201,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
+    </Grid>
+</Window>
