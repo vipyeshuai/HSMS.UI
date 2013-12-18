@@ -1,0 +1,71 @@
+﻿<Window x:Class="HSMS.UI.EmployeeEidtWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EmployeeEidtWindow" Height="595" Width="868" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TabControl Margin="12,0,0,-54">
+            <TabItem Header="基本信息">
+                <Grid Height="548" Name="gridEmployee">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13"/>
+                        <ColumnDefinition Width="854"/>
+                        <ColumnDefinition Width="44*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="16,9,0,0" Name="textBlock1" Text="姓名" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Text="{Binding Name}"  Height="23" HorizontalAlignment="Left" Margin="77,6,0,0" Name="txtName" VerticalAlignment="Top" Width="97" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="208,6,0,0" Name="textBlock2" Text="性别" VerticalAlignment="Top" />
+                    <ComboBox Grid.Column="1" SelectedValue="{Binding GenderId}" SelectedValuePath="Id" DisplayMemberPath="Name" Height="23" HorizontalAlignment="Left" Margin="281,4,0,0" Name="cbGender" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="420,6,0,0" Name="textBlock3" Text="出生日期" VerticalAlignment="Top" />
+                    <DatePicker Grid.Column="1" SelectedDate="{Binding BirthDay}" Height="25" HorizontalAlignment="Left" Margin="481,2,0,0" Name="dpBirthday" VerticalAlignment="Top" Width="115" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="16,38,0,0" Name="textBlock4" Text="入职日期" VerticalAlignment="Top" />
+                    <DatePicker Grid.Column="1" SelectedDate="{Binding InDate}"  Height="25" HorizontalAlignment="Left" Margin="77,38,0,0" Name="dpInDate" VerticalAlignment="Top" Width="115" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="208,38,0,0" Name="textBlock5" Text="合同签订日" VerticalAlignment="Top" />
+                    <DatePicker Grid.Column="1" SelectedDate="{Binding ContractStartDay}" Height="25" HorizontalAlignment="Left" Margin="286,38,0,0" Name="dpContractBeginDate" VerticalAlignment="Top" Width="115" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="415,38,0,0" Name="textBlock6" Text="合同到期日" VerticalAlignment="Top" />
+                    <DatePicker Grid.Column="1" SelectedDate="{Binding ContractEndDay}" Height="25" HorizontalAlignment="Left" Margin="481,36,0,0" Name="dpContractEndDate" VerticalAlignment="Top" Width="115" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="16,85,0,0" Name="textBlock7" Text="婚姻状况" VerticalAlignment="Top" />
+                    <ComboBox Grid.Column="1" SelectedValue="{Binding MarriageId}" DisplayMemberPath="Name" SelectedValuePath="Id" Height="23" HorizontalAlignment="Left" Margin="77,85,0,0" Name="cbMarriage" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="208,85,0,0" Name="textBlock8" Text="政治面貌" VerticalAlignment="Top" />
+                    <ComboBox Grid.Column="1" SelectedValue="{Binding PartyStatusId}" DisplayMemberPath="Name" SelectedValuePath="Id" Height="23" HorizontalAlignment="Left" Margin="286,85,0,0" Name="cbPartyStatus" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="420,85,0,0" Name="textBlock9" Text="民族" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Text="{Binding Nationality}" Height="23" HorizontalAlignment="Left" Margin="481,82,0,0" Name="txtNational" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="16,128,0,0" Name="textBlock10" Text="籍贯" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Text="{Binding NativeAddr}" Height="26" HorizontalAlignment="Left" Margin="82,125,0,0" Name="txtNativeAddr" VerticalAlignment="Top" Width="519" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="16,168,0,0" Name="textBlock11" Text="学历" VerticalAlignment="Top" />
+                    <ComboBox Grid.Column="1" SelectedValuePath="Id" DisplayMemberPath="Name" SelectedValue="{Binding EducationId}" Height="23" HorizontalAlignment="Left" Margin="86,168,0,0" Name="cbEducation" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Grid.Column="1" Height="27" HorizontalAlignment="Left" Margin="224,168,0,0" Name="textBlock12" Text="专业" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Text="{Binding Major}" Height="23" HorizontalAlignment="Left" Margin="286,168,0,0" Name="txtMajor" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="430,168,0,0" Name="textBlock13" Text="毕业院校" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Text="{Binding School}" Height="23" HorizontalAlignment="Left" Margin="491,165,0,0" Name="txtSchool" VerticalAlignment="Top" Width="110" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="16,197,0,0" Name="textBlock14" Text="联系地址" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Text="{Binding Address}" Height="21" HorizontalAlignment="Left" Margin="86,199,0,0" Name="txtAddr" VerticalAlignment="Top" Width="515" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="14,235,0,0" Name="textBlock15" Text="基本工资" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Text="{Binding BaseSalary}" Height="23" HorizontalAlignment="Left" Margin="86,235,0,0" Name="txtBaseSalary" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="212,235,0,0" Name="textBlock16" Text="邮箱" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Text="{Binding Email}" Height="23" HorizontalAlignment="Left" Margin="286,232,0,0" Name="txtEmail" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="430,232,0,0" Name="textBlock17" Text="联系电话" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Text="{Binding TelNum}" Height="23" HorizontalAlignment="Left" Margin="491,229,0,0" Name="txtTelNum" VerticalAlignment="Top" Width="110" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="14,274,0,0" Name="textBlock18" Text="省份证号码" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Text="{Binding IdNum}" Height="23" HorizontalAlignment="Left" Margin="86,275,0,0" Name="txtIdNum" VerticalAlignment="Top" Width="314" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="430,274,0,0" Name="textBlock19" Text="部门" VerticalAlignment="Top" />
+                    <ComboBox Grid.Column="1" SelectedValue="{Binding DepartmentId}" SelectedValuePath="Id" DisplayMemberPath="Name" Height="23" HorizontalAlignment="Right" Margin="0,274,253,0" Name="cbDepartment" VerticalAlignment="Top" Width="110" />
+                    <Image Grid.Column="1" Height="221" HorizontalAlignment="Left" Margin="614,31,0,0" Name="imgPhoto" Stretch="Fill" VerticalAlignment="Top" Width="190" />
+                    <Button Content="选择照片" Grid.Column="1" Height="23" HorizontalAlignment="Right" Margin="0,270,150,0" Name="btnChoosePhoto" VerticalAlignment="Top" Width="75" Click="btnChoosePhoto_Click" />
+                    <Button Content="拍照" Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="729,270,0,0" Name="btnCapture" VerticalAlignment="Top" Width="75" Click="btnCapture_Click" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="13,310,0,0" Name="textBlock20" Text="职位" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Text="{Binding Position}" Height="23" HorizontalAlignment="Left" Margin="86,307,0,0" Name="txtPosition" VerticalAlignment="Top" Width="188" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="310,307,0,0" Name="textBlock21" Text="工号" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Text="{Binding Number}" Height="23" HorizontalAlignment="Left" Margin="385,307,0,0" Name="txtNumber" VerticalAlignment="Top" Width="216" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="13,348,0,0" Name="textBlock22" Text="紧急联系人" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Text="{Binding EmergencyContact}" Height="115" HorizontalAlignment="Left" Margin="13,368,0,0" Name="txtEmergencyContact" VerticalAlignment="Top" Width="277" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="320,348,0,0" Name="textBlock23" Text="备注" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Text="{Binding Remarks}"  Height="115" HorizontalAlignment="Right" Margin="0,368,209,0" Name="txtRemarks" VerticalAlignment="Top" Width="308" />
+                    <Button Margin="686,473,50,34" Grid.Column="1" Width="118" Content="保存" Name="btnSave" Click="btnSave_Click"></Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="简历">
+                <TextBox Height="568"></TextBox>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
